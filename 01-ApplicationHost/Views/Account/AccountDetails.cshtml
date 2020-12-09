@@ -1,0 +1,38 @@
+﻿@model SecretGenerator.Models.TotpConfirmationViewModel
+
+@{
+    ViewData["Title"] = "Account Details";
+}
+
+<h2>Account Details</h2>
+
+@if (User.HasClaim(c => c.Type == VaultClaims.Capability && c.Value == "2fa"))
+{
+    <div class="row">
+        <form method="get" asp-route="disable-2fa">
+            <div class="form-group">
+                <span>2FA has been setup. </span><button type="submit" class="btn btn-default">Disable 2FA</button>
+            </div>
+        </form>
+    </div>
+}
+else if (User.HasClaim(c => c.Type == VaultClaims.Capability && c.Value == "2fa-unconfirmed"))
+{
+    <div class="row">
+        <form method="get" asp-route="confirm-2fa">
+            <div class="form-group">
+                <span>2FA has not been confirmed. </span><button type="submit" class="btn btn-default">Confirm 2FA</button>
+            </div>
+        </form>
+    </div>
+}
+else
+{
+    <div class="row">
+        <form method="post" asp-route="enable-2fa">
+            <div class="form-group">
+                <span>2FA has not been setup. </span><button type="submit" class="btn btn-default">Setup 2FA</button>
+            </div>
+        </form>
+    </div>
+}

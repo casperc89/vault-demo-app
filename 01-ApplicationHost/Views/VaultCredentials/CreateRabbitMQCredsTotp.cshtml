@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "CreateRabbitMQCredsTotp";
+}
+
+<h2>CreateRabbitMQCredsTotp</h2>
+
+<h2>2FA  QR</h2>
+<div id="totp-qr"></div>
+
+<img src="data:image/png;base64,@Model.TotpBase64EncodeBarcode" />
+
+
+@section Scripts {
+    <script type="text/javascript">
+            new QRCode(document.getElementById("totp-qr"),
+                {
+                    text: "@Html.Raw(Model.TotpUri)",
+                    width: 300,
+                    height: 300
+                });
+    </script>
+}

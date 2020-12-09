@@ -1,0 +1,29 @@
+﻿@model IndexViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@if (Model.TotpEnabled)
+{
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Account</h2>
+            <p><a asp-route="account-details">Account Details</a></p>
+        </div>
+    </div>
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Secrets</h2>
+        <ul>
+            @if (Model.VaultCapabilities.Contains("rabbitmq"))
+            {
+                <li><a asp-route="rabbitmq-creds">Create RabbitMQ Credentials</a></li>
+            }
+        </ul>
+    </div>
+</div>
+

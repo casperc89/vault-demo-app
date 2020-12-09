@@ -1,0 +1,23 @@
+﻿@model SecretGenerator.Models.TotpConfirmationViewModel
+
+@{
+    ViewData["Title"] = "DisableTwoFactorAuth";
+}
+
+<h2>Disable 2FA setup</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="DisableTwoFactorAuth">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TotpCode" class="control-label"></label>
+                <input asp-for="TotpCode" class="form-control" />
+                <span asp-validation-for="TotpCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Disable" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:50140",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "SecretGenerator": {
+      "commandName": "Project",
+      "commandLineArgs": "--Tls",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "VaultSettings__BootstrapToken": "s.zIgn0ImFynyaLHhlrGfJJ5YF",
+        "VaultSettings__AppRoleSecret": "",
+        "VaultSettings__TotpEnabled": "true",
+        "VaultSettings__AppRoleId": "app-service",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:5000"
+    }
+  }
+}

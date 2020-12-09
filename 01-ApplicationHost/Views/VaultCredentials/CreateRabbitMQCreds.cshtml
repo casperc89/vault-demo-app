@@ -1,0 +1,52 @@
+﻿@model SecretGenerator.Models.RabbitMQCredential
+
+@{
+    ViewData["Title"] = "CreateRabbitMQCreds";
+}
+
+<h2>Create RabbitMQ Credentials</h2>
+
+<div>
+    <form method="post">
+        <div class="form-group">
+            <button type="submit" class="btn btn-default">Create new credentials</button>
+        </div>
+    </form>
+</div>
+
+@if (Model != null)
+{
+    <div>
+        <h4>Credentials</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Username)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Username)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Password)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Password)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.LeaseDuration)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.LeaseDuration)
+            </dd>
+        </dl>
+    </div>
+
+    <div>
+        <a href="http://localhost:15672" target="_blank">Open Management portal</a>
+    </div>
+
+}
+
+<div>
+    <a asp-controller="Home" asp-action="Index">Back to home</a>
+</div>

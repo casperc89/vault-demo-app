@@ -1,0 +1,4 @@
+{
+    "tags": "management",
+    "vhosts": "{\"/\": { \"write\":\".*\", \"read\": \".*\"}}"
+  }
